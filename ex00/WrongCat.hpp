@@ -1,35 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Animal .hpp                                        :+:      :+:    :+:   */
+/*   WrongCat.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: zsonie <zsonie@student.42lyon.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/01/06 19:07:52 by zsonie            #+#    #+#             */
-/*   Updated: 2026/01/06 19:13:20 by zsonie           ###   ########lyon.fr   */
+/*   Created: 2026/01/06 22:19:06 by zsonie            #+#    #+#             */
+/*   Updated: 2026/01/06 22:19:38 by zsonie           ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
 #pragma once
+#include "WrongAnimal.hpp"
 #include <string>
 
-#define RESET   "\033[0m"
-#define RED     "\033[31m"
-#define GREEN   "\033[32m"
-#define YELLOW  "\033[33m"
-#define BLUE    "\033[34m"
-#define MAGENTA "\033[35m"
-#define CYAN    "\033[36m"
-
-class Animal
+class WrongCat : public WrongAnimal
 {
-protected:
-    std::string _type;
 public:
-	Animal();
-	Animal(std::string name);
-	Animal(const Animal &copy);
-	Animal &operator=(const Animal &copy);
-	~Animal();
-    void makeSound();
+	WrongCat();
+	WrongCat(std::string type);
+	WrongCat(const WrongCat &copy);
+	WrongCat &operator=(const WrongCat &copy);
+	~WrongCat();
+	void makeSound() const;
 };

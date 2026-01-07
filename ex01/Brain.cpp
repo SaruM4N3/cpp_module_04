@@ -1,26 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Cat.hpp                                            :+:      :+:    :+:   */
+/*   Brain.cpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: zsonie <zsonie@student.42lyon.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/01/06 20:20:13 by zsonie            #+#    #+#             */
-/*   Updated: 2026/01/07 00:56:28 by zsonie           ###   ########lyon.fr   */
+/*   Created: 2026/01/07 00:38:33 by zsonie            #+#    #+#             */
+/*   Updated: 2026/01/07 00:43:26 by zsonie           ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
-#pragma once
-#include "Animal.hpp"
-#include <string>
+#include "Brain.hpp"
+#include "colors.hpp"
 
-class Cat : public Animal
+Brain::Brain()
 {
-public:
-	Cat();
-	Cat(std::string type);
-	Cat(const Cat &copy);
-	Cat &operator=(const Cat &copy);
-	~Cat();
-	void makeSound() const;
-};
+}
+
+Brain::~Brain()
+{
+    std::cout << RED << "Destructor called on Animal of type: "
+              << GREEN << this->_type
+              << RESET << std::endl;
+}

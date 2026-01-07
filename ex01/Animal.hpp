@@ -1,26 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Cat.hpp                                            :+:      :+:    :+:   */
+/*   Animal.hpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: zsonie <zsonie@student.42lyon.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/01/06 20:20:13 by zsonie            #+#    #+#             */
-/*   Updated: 2026/01/07 00:56:28 by zsonie           ###   ########lyon.fr   */
+/*   Created: 2026/01/06 19:07:52 by zsonie            #+#    #+#             */
+/*   Updated: 2026/01/07 00:40:58 by zsonie           ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
 #pragma once
-#include "Animal.hpp"
 #include <string>
+#include "colors.hpp"
 
-class Cat : public Animal
+class Animal
 {
+protected:
+    std::string _type;
 public:
-	Cat();
-	Cat(std::string type);
-	Cat(const Cat &copy);
-	Cat &operator=(const Cat &copy);
-	~Cat();
-	void makeSound() const;
+	Animal();
+	Animal(std::string name);
+	Animal(const Animal &copy);
+	Animal &operator=(const Animal &copy);
+	~Animal();
+
+    virtual void makeSound() const;
+    std::string getType() const;
 };

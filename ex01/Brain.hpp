@@ -1,26 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Cat.hpp                                            :+:      :+:    :+:   */
+/*   Brain.hpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: zsonie <zsonie@student.42lyon.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/01/06 20:20:13 by zsonie            #+#    #+#             */
-/*   Updated: 2026/01/07 00:56:28 by zsonie           ###   ########lyon.fr   */
+/*   Created: 2026/01/07 00:38:02 by zsonie            #+#    #+#             */
+/*   Updated: 2026/01/07 01:39:05 by zsonie           ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
 #pragma once
-#include "Animal.hpp"
-#include <string>
+#include<string>
+#include<array>
 
-class Cat : public Animal
+class Brain
 {
+private:
+    std::string ideas[100];
 public:
-	Cat();
-	Cat(std::string type);
-	Cat(const Cat &copy);
-	Cat &operator=(const Cat &copy);
-	~Cat();
-	void makeSound() const;
+    Brain();
+    Brain(std::string name);
+	Brain(const Brain &copy);
+	Brain &operator=(const Brain &copy);
+	~Brain();
+    void setIdea(std::string idea);
+    std::string getIdea();
+
 };

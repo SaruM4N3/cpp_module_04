@@ -1,43 +1,43 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Cat.cpp                                            :+:      :+:    :+:   */
+/*   WrongCat.cpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: zsonie <zsonie@student.42lyon.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/12/06 01:14:32 by zsonie            #+#    #+#             */
-/*   Updated: 2026/01/06 22:22:08 by zsonie           ###   ########lyon.fr   */
+/*   Created: 2026/01/06 22:24:37 by zsonie            #+#    #+#             */
+/*   Updated: 2026/01/06 22:25:45 by zsonie           ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Cat.hpp"
+#include "WrongCat.hpp"
 #include "iostream"
 
-Cat::Cat() : Animal()
+WrongCat::WrongCat() : WrongAnimal()
 {
-    this->_type = "Cat";
+    this->_type = "WrongCat";
     std::cout << CYAN << "Default constructor called on "
               << GREEN << this->_type
               << RESET << std::endl;
 }
 
-Cat::Cat(std::string type)
-    : Animal(type)
+WrongCat::WrongCat(std::string type)
+    : WrongAnimal(type)
 {
     std::cout << CYAN << "Paramaterized constructor called on "
               << GREEN << this->_type
               << RESET << std::endl;
 }
 
-Cat::Cat(const Cat &copy)
-    : Animal(copy)
+WrongCat::WrongCat(const WrongCat &copy)
+    : WrongAnimal(copy)
 {
     std::cout << CYAN << "Copy constructor called on "
               << GREEN << this->_type
               << RESET << std::endl;
 }
 
-Cat &Cat::operator=(const Cat &copy)
+WrongCat &WrongCat::operator=(const WrongCat &copy)
 {
     if (this != &copy)
     {
@@ -49,16 +49,16 @@ Cat &Cat::operator=(const Cat &copy)
     return *this;
 }
 
-Cat::~Cat()
+WrongCat::~WrongCat()
 {
     std::cout << RED << "Destructor called on "
               << GREEN << this->_type
               << RESET << std::endl;
 }
 
-void Cat::makeSound() const
+void WrongCat::makeSound() const
 {
-    std::cout << BLUE << "Animal: "
+    std::cout << BLUE << "WrongAnimal: "
               << GREEN << this->_type
               << BLUE << " is meowing!"
               << RESET << std::endl;

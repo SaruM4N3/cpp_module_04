@@ -1,4 +1,4 @@
-NAME = polymorphisme
+NAME = brain
 CC = c++
 CFLAGS = -Wall -Wextra -Werror -std=c++98 -I .
 NORELINK = -MMD -MP
@@ -6,10 +6,11 @@ RM = rm -rf
 
 BUILDDIR = obj
 SRCS = Animal.cpp\
-	WrongAnimal.cpp\
-	WrongCat.cpp\
+	Brain.cpp\
 	Cat.cpp\
 	Dog.cpp\
+	WrongAnimal.cpp\
+	WrongCat.cpp\
 	main.cpp
 
 OBJS = $(SRCS:%.cpp=$(BUILDDIR)/%.o)
