@@ -6,37 +6,40 @@
 /*   By: zsonie <zsonie@student.42lyon.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/06 19:26:34 by zsonie            #+#    #+#             */
-/*   Updated: 2026/01/07 00:15:01 by zsonie           ###   ########lyon.fr   */
+/*   Updated: 2026/01/08 03:55:39 by zsonie           ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Animal.hpp"
-#include "WrongAnimal.hpp"
 #include "Cat.hpp"
-#include "WrongCat.hpp"
 #include "Dog.hpp"
+#include <stdio.h>
 #include <iostream>
+#include <sstream>
 
 int main()
 {
-    const Animal *meta = new Animal();
-    const Cat *j = new Cat();
-    const Dog *i = new Dog();
-    std::cout << j->getType() << " " << std::endl;
-    std::cout << i->getType() << " " << std::endl;
-    i->makeSound(); // will output the cat sound! 
-    j->makeSound();
-    meta->makeSound();
-    
-    const WrongAnimal *wrongMeta = new WrongAnimal();
-    const WrongCat *wrongJ = new WrongCat();
-    std::cout << wrongJ->getType() << " " << std::endl;
-    
-    wrongJ->makeSound();
-    wrongMeta->makeSound();
+    Animal **array = new Animal *[100];
+    for (int i = 0; i < 100; i++)
+    {
+        if (i < 50)
+            array[i] = new Cat();
+        else
+            array[i] = new Dog();
+    }
 
-    const WrongAnimal *wcat = new WrongCat();
-    wcat->makeSound();
+    for (int i = 0; i < 100; i++)
+    {
+        std::stringstream sus("");
+        sus << i;
+        Brain* tmp = array[i]->getBrain();
+        tmp->setIdea("m'en bas les couilles N^" + sus.str() , 0);
+        std::cout << array[i]->getBrain()->getIdea(0) << std::endl;
+    }
 
+    for (int i = 0; i < 100; i++)
+        delete array[i];
+
+    delete[] array;
     return 0;
 }

@@ -6,21 +6,24 @@
 /*   By: zsonie <zsonie@student.42lyon.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/06 20:20:13 by zsonie            #+#    #+#             */
-/*   Updated: 2026/01/07 00:41:11 by zsonie           ###   ########lyon.fr   */
+/*   Updated: 2026/01/08 03:41:46 by zsonie           ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
 #pragma once
 #include "Animal.hpp"
-#include <string>
+#include "Brain.hpp"
 
 class Cat : public Animal
 {
+private:
+	Brain *_brain;
 public:
 	Cat();
 	Cat(std::string type);
 	Cat(const Cat &copy);
 	Cat &operator=(const Cat &copy);
 	~Cat();
+	Brain* getBrain() const;
 	void makeSound() const;
 };

@@ -6,25 +6,25 @@
 /*   By: zsonie <zsonie@student.42lyon.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/07 00:38:02 by zsonie            #+#    #+#             */
-/*   Updated: 2026/01/07 01:39:05 by zsonie           ###   ########lyon.fr   */
+/*   Updated: 2026/01/08 02:19:26 by zsonie           ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
 #pragma once
 #include<string>
-#include<array>
 
 class Brain
 {
 private:
-    std::string ideas[100];
+    std::string _ideas[100];
 public:
     Brain();
-    Brain(std::string name);
+    Brain(std::string *ideas);
 	Brain(const Brain &copy);
 	Brain &operator=(const Brain &copy);
 	~Brain();
-    void setIdea(std::string idea);
-    std::string getIdea();
-
+    void setIdea(const std::string idea, const int index);
+    void setIdeas(const std::string *ideas);
+    std::string getIdea(int index);
+    std::string *getIdeas();
 };

@@ -1,6 +1,6 @@
 NAME = brain
 CC = c++
-CFLAGS = -Wall -Wextra -Werror -std=c++98 -I .
+CFLAGS = -Wall -Wextra -Werror -std=c++98 -I . -g3
 NORELINK = -MMD -MP
 RM = rm -rf
 
@@ -9,8 +9,6 @@ SRCS = Animal.cpp\
 	Brain.cpp\
 	Cat.cpp\
 	Dog.cpp\
-	WrongAnimal.cpp\
-	WrongCat.cpp\
 	main.cpp
 
 OBJS = $(SRCS:%.cpp=$(BUILDDIR)/%.o)

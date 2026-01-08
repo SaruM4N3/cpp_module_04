@@ -6,7 +6,7 @@
 /*   By: zsonie <zsonie@student.42lyon.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/06 01:14:32 by zsonie            #+#    #+#             */
-/*   Updated: 2026/01/07 00:42:55 by zsonie           ###   ########lyon.fr   */
+/*   Updated: 2026/01/08 03:40:36 by zsonie           ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,3 +68,8 @@ std::string Animal::getType() const
 {
     return this->_type;
 }
+
+// Brain* Animal::getBrain()
+// {
+//     return NULL;
+// }
