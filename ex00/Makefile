@@ -17,7 +17,7 @@ DEPS = $(OBJS:.o=.d)
 
 MAKEFLAGS += --no-print-directory
 
-.DEFAULT_GOAL = all  # Set default goal to make all
+.DEFAULT_GOAL = all
 
 # Base rule
 all: $(NAME)
@@ -36,7 +36,7 @@ $(BUILDDIR)/%.o: %.cpp
 	@printf "$(RESET)"
 
 debug: fclean
-	@$(MAKE) all CC=g++
+	@$(MAKE) all CC=g++ CFLAGS+="-DDEBUG_MODE"
 
 clean:
 	@printf "$(RED)🗑️  "

@@ -6,7 +6,7 @@
 /*   By: zsonie <zsonie@student.42lyon.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/06 19:07:52 by zsonie            #+#    #+#             */
-/*   Updated: 2026/01/20 14:45:12 by zsonie           ###   ########lyon.fr   */
+/*   Updated: 2026/01/20 14:46:08 by zsonie           ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,9 +29,9 @@ public:
 	Animal(std::string name);
 	Animal(const Animal &copy);
 	Animal &operator=(const Animal &copy);
-	virtual ~Animal();
+	virtual ~Animal() = 0;
 
-	virtual void makeSound() const;
-	virtual Brain *getBrain() const;
+	virtual void makeSound() const = 0;
+	virtual Brain *getBrain() const = 0;
 	std::string getType() const;
 };

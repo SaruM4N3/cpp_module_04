@@ -6,7 +6,7 @@
 /*   By: zsonie <zsonie@student.42lyon.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/06 19:26:34 by zsonie            #+#    #+#             */
-/*   Updated: 2026/01/20 14:42:22 by zsonie           ###   ########lyon.fr   */
+/*   Updated: 2026/01/20 14:46:17 by zsonie           ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,12 +37,6 @@ int main()
         tmp->setIdea("m'en bas les couilles N^" + sus.str(), 0);
         std::cout << array[i]->getBrain()->getIdea(0) << std::endl;
     }
-    
-    Animal *classicAnimal = new Animal;
-    
-    std::cout << "Test for Animal sound: " << std::endl;
-    classicAnimal->makeSound();
-    delete classicAnimal;
     
     for (int i = 0; i < 100; i++)
         delete array[i];

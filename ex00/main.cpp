@@ -6,16 +6,17 @@
 /*   By: zsonie <zsonie@student.42lyon.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/06 19:26:34 by zsonie            #+#    #+#             */
-/*   Updated: 2026/01/07 00:55:58 by zsonie           ###   ########lyon.fr   */
+/*   Updated: 2026/01/20 13:15:54 by zsonie           ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include <iostream>
+#include "colors.hpp"
 #include "Animal.hpp"
 #include "WrongAnimal.hpp"
 #include "Cat.hpp"
 #include "WrongCat.hpp"
 #include "Dog.hpp"
-#include <iostream>
 
 int main()
 {

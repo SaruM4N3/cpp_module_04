@@ -1,37 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Animal.hpp                                         :+:      :+:    :+:   */
+/*   Brain.hpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: zsonie <zsonie@student.42lyon.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/01/06 19:07:52 by zsonie            #+#    #+#             */
-/*   Updated: 2026/01/20 14:45:12 by zsonie           ###   ########lyon.fr   */
+/*   Created: 2026/01/07 00:38:02 by zsonie            #+#    #+#             */
+/*   Updated: 2026/01/08 02:19:26 by zsonie           ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
 #pragma once
-#include <string>
-#include "colors.hpp"
-#include "Brain.hpp"
+#include<string>
 
-#ifndef DEBUG_MODE
-# define DEBUG_MODE 0
-#endif
-
-class Animal
+class Brain
 {
-protected:
-	std::string _type;
-
+private:
+    std::string _ideas[100];
 public:
-	Animal();
-	Animal(std::string name);
-	Animal(const Animal &copy);
-	Animal &operator=(const Animal &copy);
-	virtual ~Animal();
-
-	virtual void makeSound() const;
-	virtual Brain *getBrain() const;
-	std::string getType() const;
+    Brain();
+    Brain(std::string *ideas);
+	Brain(const Brain &copy);
+	Brain &operator=(const Brain &copy);
+	~Brain();
+    void setIdea(const std::string idea, const int index);
+    void setIdeas(const std::string *ideas);
+    std::string getIdea(int index);
+    std::string *getIdeas();
 };

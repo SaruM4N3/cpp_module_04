@@ -1,37 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Animal.hpp                                         :+:      :+:    :+:   */
+/*   colors.hpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: zsonie <zsonie@student.42lyon.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/01/06 19:07:52 by zsonie            #+#    #+#             */
-/*   Updated: 2026/01/20 14:45:12 by zsonie           ###   ########lyon.fr   */
+/*   Created: 2026/01/07 00:40:24 by zsonie            #+#    #+#             */
+/*   Updated: 2026/01/07 00:40:43 by zsonie           ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
 #pragma once
-#include <string>
-#include "colors.hpp"
-#include "Brain.hpp"
 
-#ifndef DEBUG_MODE
-# define DEBUG_MODE 0
-#endif
-
-class Animal
-{
-protected:
-	std::string _type;
-
-public:
-	Animal();
-	Animal(std::string name);
-	Animal(const Animal &copy);
-	Animal &operator=(const Animal &copy);
-	virtual ~Animal();
-
-	virtual void makeSound() const;
-	virtual Brain *getBrain() const;
-	std::string getType() const;
-};
+#define RESET   "\033[0m"
+#define RED     "\033[31m"
+#define GREEN   "\033[32m"
+#define YELLOW  "\033[33m"
+#define BLUE    "\033[34m"
+#define MAGENTA "\033[35m"
+#define CYAN    "\033[36m"
