@@ -1,7 +1,7 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Animal.cpp                                         :+:      :+:    :+:   */
+/*   AAnimal.cpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: zsonie <zsonie@student.42lyon.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
@@ -10,10 +10,10 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Animal.hpp"
+#include "AAnimal.hpp"
 #include "iostream"
 
-Animal::Animal() : _type("Animal")
+AAnimal::AAnimal() : _type("AAnimal")
 {
     if (DEBUG_MODE)
     std::cout << CYAN << "Default constructor called on "
@@ -21,7 +21,7 @@ Animal::Animal() : _type("Animal")
               << RESET << std::endl;
 }
 
-Animal::Animal(std::string type)
+AAnimal::AAnimal(std::string type)
     : _type(type)
 {
     if (DEBUG_MODE)
@@ -30,7 +30,7 @@ Animal::Animal(std::string type)
                   << RESET << std::endl;
 }
 
-Animal::Animal(const Animal &copy)
+AAnimal::AAnimal(const AAnimal &copy)
     : _type(copy._type)
 {
     if (DEBUG_MODE)
@@ -39,7 +39,7 @@ Animal::Animal(const Animal &copy)
                   << RESET << std::endl;
 }
 
-Animal &Animal::operator=(const Animal &copy)
+AAnimal &AAnimal::operator=(const AAnimal &copy)
 {
     if (this != &copy)
     {
@@ -51,29 +51,29 @@ Animal &Animal::operator=(const Animal &copy)
     return *this;
 }
 
-Animal::~Animal()
+AAnimal::~AAnimal()
 {
     if (DEBUG_MODE)
-        std::cout << RED << "Destructor called on Animal of type: "
+        std::cout << RED << "Destructor called on AAnimal of type: "
                   << GREEN << this->_type
                   << RESET << std::endl;
 }
 
-void Animal::makeSound() const
+void AAnimal::makeSound() const
 {
-    std::cout << BLUE << "Unknow Animal: "
+    std::cout << BLUE << "Unknow AAnimal: "
               << GREEN << this->_type
-              << BLUE << " is animaling!"
+              << BLUE << " is AAnimaling!"
               << RESET << std::endl;
     return;
 }
 
-std::string Animal::getType() const
+std::string AAnimal::getType() const
 {
     return this->_type;
 }
 
-Brain *Animal::getBrain() const
+Brain *AAnimal::getBrain() const
 {
     return NULL;
 }

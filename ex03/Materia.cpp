@@ -1,40 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Dog.cpp                                            :+:      :+:    :+:   */
+/*   Materia.cpp                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: zsonie <zsonie@student.42lyon.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/06 01:14:32 by zsonie            #+#    #+#             */
-/*   Updated: 2026/01/21 14:22:26 by zsonie           ###   ########lyon.fr   */
+/*   Updated: 2026/01/21 14:20:38 by zsonie           ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Dog.hpp"
+#include "Materia.hpp"
 #include "iostream"
 
-Dog::Dog() : AAnimal()
+Materia::Materia() : _type("Materia")
 {
-    this->_brain = new Brain();
-    this->_type = "Dog";
     if (DEBUG_MODE)
         std::cout << CYAN << "Default constructor called on "
                   << GREEN << this->_type
                   << RESET << std::endl;
 }
 
-Dog::Dog(std::string type)
-    : AAnimal(type)
+Materia::Materia(std::string type)
+    : _type(type)
 {
-    this->_brain = new Brain();
     if (DEBUG_MODE)
         std::cout << CYAN << "Paramaterized constructor called on "
                   << GREEN << this->_type
                   << RESET << std::endl;
 }
 
-Dog::Dog(const Dog &copy)
-    : AAnimal(copy), _brain(new Brain(*copy._brain))
+Materia::Materia(const Materia &copy)
+    : _type(copy._type)
 {
     if (DEBUG_MODE)
         std::cout << CYAN << "Copy constructor called on "
@@ -42,12 +39,11 @@ Dog::Dog(const Dog &copy)
                   << RESET << std::endl;
 }
 
-Dog &Dog::operator=(const Dog &copy)
+Materia &Materia::operator=(const Materia &copy)
 {
     if (this != &copy)
     {
         this->_type = copy._type;
-        *this->_brain = *copy._brain;
     }
     if (DEBUG_MODE)
         std::cout << CYAN << "Copy assignment operator called on "
@@ -56,26 +52,10 @@ Dog &Dog::operator=(const Dog &copy)
     return *this;
 }
 
-Dog::~Dog()
+Materia::~Materia()
 {
-    if (_brain)
-        delete this->_brain;
     if (DEBUG_MODE)
-        std::cout << RED << "Destructor called on "
+        std::cout << RED << "Destructor called on Materia of type: "
                   << GREEN << this->_type
                   << RESET << std::endl;
-}
-
-Brain *Dog::getBrain() const
-{
-    return this->_brain;
-}
-
-void Dog::makeSound() const
-{
-    std::cout << BLUE << "AAnimal: "
-              << GREEN << this->_type
-              << BLUE << " is barking!"
-              << RESET << std::endl;
-    return;
 }

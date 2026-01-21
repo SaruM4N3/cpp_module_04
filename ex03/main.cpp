@@ -6,7 +6,7 @@
 /*   By: zsonie <zsonie@student.42lyon.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/06 19:26:34 by zsonie            #+#    #+#             */
-/*   Updated: 2026/01/21 14:24:23 by zsonie           ###   ########lyon.fr   */
+/*   Updated: 2026/01/20 14:46:17 by zsonie           ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,13 +14,13 @@
 #include <iostream>
 #include <sstream>
 #include "colors.hpp"
-#include "AAnimal.hpp"
+#include "Animal.hpp"
 #include "Cat.hpp"
 #include "Dog.hpp"
 
 int main()
 {
-    AAnimal **array = new AAnimal *[100];
+    Animal **array = new Animal *[100];
     for (int i = 0; i < 100; i++)
     {
         if (i < 50)

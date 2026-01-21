@@ -6,12 +6,12 @@
 /*   By: zsonie <zsonie@student.42lyon.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/07 00:38:33 by zsonie            #+#    #+#             */
-/*   Updated: 2026/01/20 14:37:20 by zsonie           ###   ########lyon.fr   */
+/*   Updated: 2026/01/21 14:21:42 by zsonie           ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Brain.hpp"
-#include "Animal.hpp"
+#include "AAnimal.hpp"
 #include "colors.hpp"
 #include <iostream>
 

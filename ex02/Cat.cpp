@@ -6,14 +6,14 @@
 /*   By: zsonie <zsonie@student.42lyon.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/06 01:14:32 by zsonie            #+#    #+#             */
-/*   Updated: 2026/01/20 14:37:54 by zsonie           ###   ########lyon.fr   */
+/*   Updated: 2026/01/21 14:22:07 by zsonie           ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Cat.hpp"
 #include "iostream"
 
-Cat::Cat() : Animal()
+Cat::Cat() : AAnimal()
 {
     this->_type = "Cat";
     this->_brain = new Brain();
@@ -24,7 +24,7 @@ Cat::Cat() : Animal()
 }
 
 Cat::Cat(std::string type)
-    : Animal(type)
+    : AAnimal(type)
 {
     this->_brain = new Brain();
     if (DEBUG_MODE)
@@ -34,7 +34,7 @@ Cat::Cat(std::string type)
 }
 
 Cat::Cat(const Cat &copy)
-    : Animal(copy), _brain(new Brain(*copy._brain))
+    : AAnimal(copy), _brain(new Brain(*copy._brain))
 {
     if (DEBUG_MODE)
         std::cout << CYAN << "Copy constructor called on "
@@ -68,7 +68,7 @@ Cat::~Cat()
 
 void Cat::makeSound() const
 {
-    std::cout << BLUE << "Animal: "
+    std::cout << BLUE << "AAnimal: "
               << GREEN << this->_type
               << BLUE << " is meowing!"
               << RESET << std::endl;

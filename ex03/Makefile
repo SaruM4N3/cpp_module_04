@@ -1,14 +1,11 @@
-NAME = abstract
+NAME = materia
 CC = c++
 CFLAGS = -Wall -Wextra -Werror -std=c++98 -I .
 NORELINK = -MMD -MP
 RM = rm -rf
 
 BUILDDIR = obj
-SRCS = AAnimal.cpp\
-	Brain.cpp\
-	Cat.cpp\
-	Dog.cpp\
+SRCS = Materia.cpp\
 	main.cpp
 
 OBJS = $(SRCS:%.cpp=$(BUILDDIR)/%.o)
