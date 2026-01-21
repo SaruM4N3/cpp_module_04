@@ -1,19 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Materia.cpp                                        :+:      :+:    :+:   */
+/*   AMateria.cpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: zsonie <zsonie@student.42lyon.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/06 01:14:32 by zsonie            #+#    #+#             */
-/*   Updated: 2026/01/21 14:20:38 by zsonie           ###   ########lyon.fr   */
+/*   Updated: 2026/01/21 17:58:56 by zsonie           ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Materia.hpp"
+#include "AMateria.hpp"
 #include "iostream"
 
-Materia::Materia() : _type("Materia")
+AMateria::AMateria() : _type("DefaultMateria")
 {
     if (DEBUG_MODE)
         std::cout << CYAN << "Default constructor called on "
@@ -21,16 +21,7 @@ Materia::Materia() : _type("Materia")
                   << RESET << std::endl;
 }
 
-Materia::Materia(std::string type)
-    : _type(type)
-{
-    if (DEBUG_MODE)
-        std::cout << CYAN << "Paramaterized constructor called on "
-                  << GREEN << this->_type
-                  << RESET << std::endl;
-}
-
-Materia::Materia(const Materia &copy)
+AMateria::AMateria(const AMateria &copy)
     : _type(copy._type)
 {
     if (DEBUG_MODE)
@@ -39,7 +30,7 @@ Materia::Materia(const Materia &copy)
                   << RESET << std::endl;
 }
 
-Materia &Materia::operator=(const Materia &copy)
+AMateria &AMateria::operator=(const AMateria &copy)
 {
     if (this != &copy)
     {
@@ -52,10 +43,37 @@ Materia &Materia::operator=(const Materia &copy)
     return *this;
 }
 
-Materia::~Materia()
+AMateria::~AMateria()
 {
     if (DEBUG_MODE)
-        std::cout << RED << "Destructor called on Materia of type: "
+        std::cout << RED << "Destructor called on AMateria of type: "
                   << GREEN << this->_type
                   << RESET << std::endl;
+}
+
+std::string const &AMateria::getType() const
+{
+    return this->_type;
+}
+
+AMateria *AMateria::clone() const
+{
+    //WIP
+    return;
+}
+
+void AMateria::use(ICharacter &target)
+{
+    if (this->_type == "ice")
+    {
+        std::cout << BLUE << "* shoots an ice bolt at " << CYAN << target.getName() << BLUE << " *" << std::endl;
+        return;
+    }
+    else if (this->_type == "cure")
+    {
+        std::cout << GREEN << "* heals " << CYAN << target._name << GREEN << "'s wounds *" << std::endl;
+        return;
+    }
+    //WIP
+    return;
 }

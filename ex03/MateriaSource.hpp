@@ -1,33 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Materia.hpp                                        :+:      :+:    :+:   */
+/*   MateriaSource.hpp                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: zsonie <zsonie@student.42lyon.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/01/06 19:07:52 by zsonie            #+#    #+#             */
-/*   Updated: 2026/01/21 14:19:39 by zsonie           ###   ########lyon.fr   */
+/*   Created: 2026/01/21 15:28:01 by zsonie            #+#    #+#             */
+/*   Updated: 2026/01/21 18:17:37 by zsonie           ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
-#pragma once
-#include <string>
-#include "colors.hpp"
+#include<string>
+#include"AMateria.hpp"
 
-#ifndef DEBUG_MODE
-# define DEBUG_MODE 0
-#endif
-
-class Materia
+class MateriaSource
 {
-protected:
-	std::string _type;
-
 public:
-	Materia();
-	Materia(std::string name);
-	Materia(const Materia &copy);
-	Materia &operator=(const Materia &copy);
-	~Materia();
-
+virtual ~MateriaSource() {}
+virtual void learnMateria(AMateria*) = 0;
+virtual AMateria* createMateria(std::string const & type) = 0;
 };
