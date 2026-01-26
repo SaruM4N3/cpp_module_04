@@ -6,17 +6,25 @@
 /*   By: zsonie <zsonie@student.42lyon.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/06 01:14:32 by zsonie            #+#    #+#             */
-/*   Updated: 2026/01/21 17:58:56 by zsonie           ###   ########lyon.fr   */
+/*   Updated: 2026/01/25 23:43:06 by zsonie           ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "AMateria.hpp"
-#include "iostream"
 
 AMateria::AMateria() : _type("DefaultMateria")
 {
     if (DEBUG_MODE)
         std::cout << CYAN << "Default constructor called on "
+                  << GREEN << this->_type
+                  << RESET << std::endl;
+}
+
+AMateria::AMateria(std::string const &type)
+    : _type(type)
+{
+    if (DEBUG_MODE)
+        std::cout << CYAN << "Paramaterized constructor called on "
                   << GREEN << this->_type
                   << RESET << std::endl;
 }
@@ -33,9 +41,7 @@ AMateria::AMateria(const AMateria &copy)
 AMateria &AMateria::operator=(const AMateria &copy)
 {
     if (this != &copy)
-    {
         this->_type = copy._type;
-    }
     if (DEBUG_MODE)
         std::cout << CYAN << "Copy assignment operator called on "
                   << GREEN << this->_type
@@ -58,8 +64,7 @@ std::string const &AMateria::getType() const
 
 AMateria *AMateria::clone() const
 {
-    //WIP
-    return;
+    return NULL;
 }
 
 void AMateria::use(ICharacter &target)
@@ -71,9 +76,8 @@ void AMateria::use(ICharacter &target)
     }
     else if (this->_type == "cure")
     {
-        std::cout << GREEN << "* heals " << CYAN << target._name << GREEN << "'s wounds *" << std::endl;
+        std::cout << GREEN << "* heals " << CYAN << target.getName() << GREEN << "'s wounds *" << std::endl;
         return;
     }
-    //WIP
     return;
 }

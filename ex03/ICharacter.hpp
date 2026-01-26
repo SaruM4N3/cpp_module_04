@@ -6,11 +6,10 @@
 /*   By: zsonie <zsonie@student.42lyon.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/21 15:07:57 by zsonie            #+#    #+#             */
-/*   Updated: 2026/01/21 16:59:53 by zsonie           ###   ########lyon.fr   */
+/*   Updated: 2026/01/25 23:56:52 by zsonie           ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include<string>
 #include"AMateria.hpp"
 
 class ICharacter

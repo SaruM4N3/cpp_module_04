@@ -16,9 +16,9 @@
 AAnimal::AAnimal() : _type("AAnimal")
 {
     if (DEBUG_MODE)
-    std::cout << CYAN << "Default constructor called on "
-              << GREEN << this->_type
-              << RESET << std::endl;
+        std::cout << CYAN << "Default constructor called on "
+                  << GREEN << this->_type
+                  << RESET << std::endl;
 }
 
 AAnimal::AAnimal(std::string type)
@@ -75,5 +75,9 @@ std::string AAnimal::getType() const
 
 Brain *AAnimal::getBrain() const
 {
+    std::cout << BLUE << "Unknow AAnimal: "
+              << GREEN << this->_type
+              << BLUE << " don't have brain!"
+              << RESET << std::endl;
     return NULL;
 }

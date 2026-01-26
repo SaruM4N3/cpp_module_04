@@ -11,13 +11,12 @@
 /* ************************************************************************** */
 
 #pragma once
+#ifndef AMATERIA_HPP
+# define AMATERIA_HPP
 #include <string>
+#include <iostream>
 #include "ICharacter.hpp"
 #include "colors.hpp"
-
-#ifndef DEBUG_MODE
-#define DEBUG_MODE 0
-#endif
 
 class AMateria
 {
@@ -35,3 +34,4 @@ public:
 	virtual AMateria *clone() const = 0;
 	virtual void use(ICharacter &target);
 };
+#endif

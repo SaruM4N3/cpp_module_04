@@ -6,6 +6,13 @@ RM = rm -rf
 
 BUILDDIR = obj
 SRCS = Materia.cpp\
+	AMateria.cpp\
+	IMateriaSource.cpp\
+	MateriaSource.cpp\
+	ICharacter.cpp\
+	Character.cpp\
+	Cure.cpp\
+	Ice.cpp\
 	main.cpp
 
 OBJS = $(SRCS:%.cpp=$(BUILDDIR)/%.o)
