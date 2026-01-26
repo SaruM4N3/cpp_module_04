@@ -5,11 +5,8 @@ NORELINK = -MMD -MP
 RM = rm -rf
 
 BUILDDIR = obj
-SRCS = Materia.cpp\
-	AMateria.cpp\
-	IMateriaSource.cpp\
+SRCS = AMateria.cpp\
 	MateriaSource.cpp\
-	ICharacter.cpp\
 	Character.cpp\
 	Cure.cpp\
 	Ice.cpp\

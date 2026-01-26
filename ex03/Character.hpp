@@ -6,10 +6,12 @@
 /*   By: zsonie <zsonie@student.42lyon.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/21 15:07:57 by zsonie            #+#    #+#             */
-/*   Updated: 2026/01/21 18:13:55 by zsonie           ###   ########lyon.fr   */
+/*   Updated: 2026/01/26 18:03:32 by zsonie           ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
+#ifndef CHARACTER_HPP
+# define CHARACTER_HPP
 #include<string>
 #include"AMateria.hpp"
 
@@ -30,3 +32,4 @@ public:
     void unequip(int idx);
     void use(int idx, ICharacter &target);
 };
+#endif

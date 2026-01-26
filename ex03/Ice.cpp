@@ -6,13 +6,13 @@
 /*   By: zsonie <zsonie@student.42lyon.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/21 17:02:28 by zsonie            #+#    #+#             */
-/*   Updated: 2026/01/25 23:44:38 by zsonie           ###   ########lyon.fr   */
+/*   Updated: 2026/01/26 15:21:28 by zsonie           ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Ice.hpp"
 
-Ice::Ice()
+Ice::Ice() : AMateria("ice")
 {
     if (DEBUG_MODE)
         std::cout << CYAN << "Default constructor called on "
@@ -21,7 +21,7 @@ Ice::Ice()
 }
 
 Ice::Ice(std::string const &type)
-    : _type(type)
+    : AMateria(type)
 {
     if (DEBUG_MODE)
         std::cout << CYAN << "Paramaterized constructor called on "
@@ -30,7 +30,7 @@ Ice::Ice(std::string const &type)
 }
 
 Ice::Ice(const Ice &copy)
-    : _type(copy._type)
+    : AMateria(copy)
 {
     if (DEBUG_MODE)
         std::cout << CYAN << "Copy constructor called on "
@@ -52,32 +52,18 @@ Ice &Ice::operator=(const Ice &copy)
 Ice::~Ice()
 {
     if (DEBUG_MODE)
-        std::cout << RED << "Destructor called on Ice of type: "
+        std::cout << RED << "Destructor called on Ice Materia : "
                   << GREEN << this->_type
                   << RESET << std::endl;
 }
 
-std::string const &Ice::getType() const
-{
-    return this->_type;
-}
-
 Ice *Ice::clone() const
 {
-    return NULL;
+    return new Ice();
 }
 
 void Ice::use(ICharacter &target)
 {
-    if (this->_type == "ice")
-    {
-        std::cout << BLUE << "* shoots an ice bolt at " << CYAN << target.getName() << BLUE << " *" << std::endl;
-        return;
-    }
-    else if (this->_type == "cure")
-    {
-        std::cout << GREEN << "* heals " << CYAN << target.getName() << GREEN << "'s wounds *" << std::endl;
-        return;
-    }
+    std::cout << BLUE << "* shoots an ice bolt at " << CYAN << target.getName() << BLUE << " *" << std::endl;
     return;
 }

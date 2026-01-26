@@ -6,7 +6,7 @@
 /*   By: zsonie <zsonie@student.42lyon.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/21 17:02:28 by zsonie            #+#    #+#             */
-/*   Updated: 2026/01/25 23:42:20 by zsonie           ###   ########lyon.fr   */
+/*   Updated: 2026/01/26 20:40:11 by zsonie           ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,8 +20,8 @@ class Ice: public AMateria
 public:
     Ice();
 	Ice(std::string const &type);
-	Ice(const AMateria &copy);
-	Ice &operator=(const AMateria &copy);
+	Ice(const Ice &copy);
+	Ice &operator=(const Ice &copy);
     ~Ice();
     Ice *clone() const;
     void use(ICharacter &target);

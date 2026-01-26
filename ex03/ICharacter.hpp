@@ -6,18 +6,18 @@
 /*   By: zsonie <zsonie@student.42lyon.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/21 15:07:57 by zsonie            #+#    #+#             */
-/*   Updated: 2026/01/25 23:56:52 by zsonie           ###   ########lyon.fr   */
+/*   Updated: 2026/01/26 18:31:18 by zsonie           ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include"AMateria.hpp"
+#ifndef ICHARACTER_HPP
+# define ICHARACTER_HPP
+#include<string>
+
+class AMateria;
 
 class ICharacter
-{
-private:
-    std::string _name;
-    AMateria* _items[4];
-    
+{    
 public:
     virtual ~ICharacter() {}
     virtual std::string const &getName() const = 0;
@@ -25,3 +25,4 @@ public:
     virtual void unequip(int idx) = 0;
     virtual void use(int idx, ICharacter &target) = 0;
 };
+#endif

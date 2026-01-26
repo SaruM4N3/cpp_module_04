@@ -15,8 +15,9 @@
 # define AMATERIA_HPP
 #include <string>
 #include <iostream>
-#include "ICharacter.hpp"
 #include "colors.hpp"
+
+class ICharacter;
 
 class AMateria
 {

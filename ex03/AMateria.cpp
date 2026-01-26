@@ -6,7 +6,7 @@
 /*   By: zsonie <zsonie@student.42lyon.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/06 01:14:32 by zsonie            #+#    #+#             */
-/*   Updated: 2026/01/25 23:43:06 by zsonie           ###   ########lyon.fr   */
+/*   Updated: 2026/01/26 15:22:36 by zsonie           ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,15 +69,5 @@ AMateria *AMateria::clone() const
 
 void AMateria::use(ICharacter &target)
 {
-    if (this->_type == "ice")
-    {
-        std::cout << BLUE << "* shoots an ice bolt at " << CYAN << target.getName() << BLUE << " *" << std::endl;
-        return;
-    }
-    else if (this->_type == "cure")
-    {
-        std::cout << GREEN << "* heals " << CYAN << target.getName() << GREEN << "'s wounds *" << std::endl;
-        return;
-    }
     return;
 }

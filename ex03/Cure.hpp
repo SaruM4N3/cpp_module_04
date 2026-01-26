@@ -6,7 +6,7 @@
 /*   By: zsonie <zsonie@student.42lyon.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/21 17:03:01 by zsonie            #+#    #+#             */
-/*   Updated: 2026/01/25 22:11:25 by zsonie           ###   ########lyon.fr   */
+/*   Updated: 2026/01/26 16:00:24 by zsonie           ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,8 +17,6 @@
 
 class Cure: public AMateria
 {
-private:
-
 public:
     Cure();
 	Cure(std::string const &type);
