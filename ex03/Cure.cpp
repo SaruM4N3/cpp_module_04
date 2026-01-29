@@ -3,17 +3,18 @@
 /*                                                        :::      ::::::::   */
 /*   Cure.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: zsonie <zsonie@student.42lyon.fr>          +#+  +:+       +#+        */
+/*   By: zsonie <zsonie@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/21 17:02:59 by zsonie            #+#    #+#             */
-/*   Updated: 2026/01/26 15:22:25 by zsonie           ###   ########lyon.fr   */
+/*   Updated: 2026/01/29 19:47:50 by zsonie           ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
 
 #include "Cure.hpp"
+#include "ICharacter.hpp"
 
-Cure::Cure() : AMateria("Cure")
+Cure::Cure() : AMateria("cure")
 {
     if (DEBUG_MODE)
         std::cout << CYAN << "Default constructor called on "

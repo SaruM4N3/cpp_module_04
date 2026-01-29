@@ -3,16 +3,17 @@
 /*                                                        :::      ::::::::   */
 /*   Character.hpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: zsonie <zsonie@student.42lyon.fr>          +#+  +:+       +#+        */
+/*   By: zsonie <zsonie@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/21 15:07:57 by zsonie            #+#    #+#             */
-/*   Updated: 2026/01/26 18:03:32 by zsonie           ###   ########lyon.fr   */
+/*   Updated: 2026/01/29 19:46:22 by zsonie           ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef CHARACTER_HPP
 # define CHARACTER_HPP
 #include<string>
+#include"ICharacter.hpp"
 #include"AMateria.hpp"
 
 class Character: public ICharacter

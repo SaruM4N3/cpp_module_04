@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   MateriaSource.hpp                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: zsonie <zsonie@student.42lyon.fr>          +#+  +:+       +#+        */
+/*   By: zsonie <zsonie@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/21 15:28:01 by zsonie            #+#    #+#             */
-/*   Updated: 2026/01/26 21:38:31 by zsonie           ###   ########lyon.fr   */
+/*   Updated: 2026/01/29 19:46:22 by zsonie           ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@
 #include "AMateria.hpp"
 #include "IMateriaSource.hpp"
 
-class MateriaSource
+class MateriaSource: public IMateriaSource
 {
 private:
     AMateria* _trash[4];

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Character.cpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: zsonie <zsonie@student.42lyon.fr>          +#+  +:+       +#+        */
+/*   By: zsonie <zsonie@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/21 15:07:57 by zsonie            #+#    #+#             */
-/*   Updated: 2026/01/26 20:50:23 by zsonie           ###   ########lyon.fr   */
+/*   Updated: 2026/01/29 19:46:22 by zsonie           ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,12 @@ Character::Character(std::string name) : _name(name), _items()
 Character::Character(const Character &copy) : _name(copy._name)
 {
     for (int i = 0; i < 4; i++)
-        this->_items[i] = copy._items[i];
+    {
+        if (copy._items[i])
+            this->_items[i] = copy._items[i]->clone();
+        else
+            this->_items[i] = NULL;
+    }
     if (DEBUG_MODE)
         std::cout << BLUE << "Copy constructor called on " << GREEN << this->_name << RESET << std::endl;
 }
@@ -35,12 +40,40 @@ Character &Character::operator=(const Character &copy)
     if (this != &copy)
     {
         this->_name = copy._name;
+        for (int i = 0; i < 4; i++)
+        {
+            if (this->_items[i])
+            {
+                delete this->_items[i];
+                this->_items[i] = NULL;
+            }
+            if (copy._items[i])
+                this->_items[i] = copy._items[i]->clone();
+        }
     }
     if (DEBUG_MODE)
         std::cout << CYAN << "Copy assignment operator called on "
                   << GREEN << this->_name
                   << RESET << std::endl;
     return *this;
+}
+
+Character::~Character()
+{
+    for (int i = 0; i < 4; i++)
+    {
+        if (this->_items[i])
+            delete this->_items[i];
+    }
+    if (DEBUG_MODE)
+        std::cout << RED << "Destructor called on Character : "
+                  << GREEN << this->_name
+                  << RESET << std::endl;
+}
+
+std::string const &Character::getName() const
+{
+    return this->_name;
 }
 
 void Character::equip(AMateria *m)

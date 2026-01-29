@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   MateriaSource.cpp                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: zsonie <zsonie@student.42lyon.fr>          +#+  +:+       +#+        */
+/*   By: zsonie <zsonie@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/26 16:42:49 by zsonie            #+#    #+#             */
-/*   Updated: 2026/01/26 23:02:15 by zsonie           ###   ########lyon.fr   */
+/*   Updated: 2026/01/29 19:48:20 by zsonie           ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,12 +20,14 @@ MateriaSource::MateriaSource() : _trash()
                   << RESET << std::endl;
 }
 
-MateriaSource::MateriaSource(AMateria *items[4])
+MateriaSource::MateriaSource(AMateria *items[4]) : _trash()
 {
     for (int i = 0; i < 4; i++)
     {
-        if (items[i])
-            this->_trash[i] = items[i];
+        if (items && items[i])
+            this->_trash[i] = items[i]->clone();
+        else
+            this->_trash[i] = NULL;
     }
     if (DEBUG_MODE)
         std::cout << CYAN << "Paramaterized constructor called on "
@@ -44,12 +46,17 @@ MateriaSource::MateriaSource(const MateriaSource &copy)
 
 MateriaSource &MateriaSource::operator=(const MateriaSource &copy)
 {
-    for (int i = 0; i < 4; i++)
+    if (this != &copy)
     {
-        if (copy._trash[i])
+        for (int i = 0; i < 4; i++)
         {
-            delete this->_trash[i];
-            this->_trash[i] = copy._trash[i];
+            if (this->_trash[i])
+            {
+                delete this->_trash[i];
+                this->_trash[i] = NULL;
+            }
+            if (copy._trash[i])
+                this->_trash[i] = copy._trash[i]->clone();
         }
     }
     if (DEBUG_MODE)
@@ -72,7 +79,26 @@ MateriaSource::~MateriaSource()
                   << RESET << std::endl;
 }
 
-MateriasSource::learnMateria(AMateria *);
-MateriaSource::createMateria(std::string const &type)
+void MateriaSource::learnMateria(AMateria *m)
 {
+    if (!m)
+        return;
+    for (int i = 0; i < 4; i++)
+    {
+        if (!this->_trash[i])
+        {
+            this->_trash[i] = m;
+            return;
+        }
+    }
+    delete m;
+}
+AMateria *MateriaSource::createMateria(std::string const &type)
+{
+    for (int i = 0; i < 4; i++)
+    {
+        if (this->_trash[i] && this->_trash[i]->getType() == type)
+            return this->_trash[i]->clone();
+    }
+    return NULL;
 }
