@@ -1,6 +1,6 @@
 NAME = materia
-CC = c++
-CFLAGS = -Wall -Wextra -Werror -std=c++98 -I .
+CXX = c++
+CXXFLAGS = -Wall -Wextra -Werror -std=c++98 -I .
 NORELINK = -MMD -MP
 RM = rm -rf
 
@@ -24,7 +24,7 @@ all: $(NAME)
 
 $(NAME): $(OBJS)
 	@printf "$(GREY)🔨 "
-	$(CC) $(CFLAGS) -o $@ $(OBJS)
+	$(CXX) $(CXXFLAGS) -o $@ $(OBJS)
 	@printf "\n $(GREEN)✅ Build done!$(RESET)\n"
 
 # Relink prevention for linked projects
@@ -32,11 +32,11 @@ FORCE:
 $(BUILDDIR)/%.o: %.cpp
 	@printf "$(GREY)🔨 "
 	@mkdir -p $(dir $@)
-	$(CC) $(CFLAGS) $(NORELINK) -c $< -o $@
+	$(CXX) $(CXXFLAGS) $(NORELINK) -c $< -o $@
 	@printf "$(RESET)"
 
 debug: fclean
-	@$(MAKE) all CC=g++ CFLAGS="-DDEBUG_MODE=1 -g3"
+	@$(MAKE) all CXX=g++ CXXFLAGS="-DDEBUG_MODE=1 -g3"
 
 clean:
 	@printf "$(RED)🗑️ "
