@@ -6,7 +6,7 @@
 /*   By: zsonie <zsonie@student.42lyon.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/21 15:07:57 by zsonie            #+#    #+#             */
-/*   Updated: 2026/01/30 16:40:50 by zsonie           ###   ########lyon.fr   */
+/*   Updated: 2026/02/04 22:14:03 by zsonie           ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,5 +32,6 @@ public:
     void equip(AMateria *m);
     void unequip(int idx);
     void use(int idx, ICharacter &target);
+    AMateria *getMateria(int idx);
 };
 #endif

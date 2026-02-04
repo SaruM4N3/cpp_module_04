@@ -6,13 +6,14 @@
 /*   By: zsonie <zsonie@student.42lyon.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/06 01:14:32 by zsonie            #+#    #+#             */
-/*   Updated: 2026/01/30 16:41:03 by zsonie           ###   ########lyon.fr   */
+/*   Updated: 2026/02/04 22:04:06 by zsonie           ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "AMateria.hpp"
 
-AMateria::AMateria() : _type("DefaultMateria")
+AMateria::AMateria()
+    : _type("DefaultMateria")
 {
     if (DEBUG_MODE)
         std::cout << CYAN << "Default constructor called on "
@@ -60,15 +61,4 @@ AMateria::~AMateria()
 std::string const &AMateria::getType() const
 {
     return this->_type;
-}
-
-AMateria *AMateria::clone() const
-{
-    return NULL;
-}
-
-void AMateria::use(ICharacter &target)
-{
-    (void)target;
-    return;
 }
