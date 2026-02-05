@@ -6,7 +6,7 @@
 /*   By: zsonie <zsonie@student.42lyon.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/07 00:38:33 by zsonie            #+#    #+#             */
-/*   Updated: 2026/01/21 14:21:42 by zsonie           ###   ########lyon.fr   */
+/*   Updated: 2026/02/05 00:40:01 by zsonie           ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,11 +59,18 @@ Brain::~Brain()
 
 void Brain::setIdea(const std::string idea, const int index)
 {
+    if (index < 0 || index > 99)
+    {
+        std::cout << RED << "set ff" << RESET << std::endl;
+        return;
+    }
     this->_ideas[index] = idea;
 }
 
 void Brain::setIdeas(const std::string *ideas)
 {
+    if (!ideas)
+        return;
     for (int i = 0; i < 100; i++)
     {
         if (ideas[i][0])
@@ -75,6 +82,11 @@ void Brain::setIdeas(const std::string *ideas)
 
 std::string Brain::getIdea(int index)
 {
+    if (index < 0 || index > 99)
+    {
+        std::cout << RED << "get ff" << RESET << std::endl;
+        return std::string();
+    }
     return this->_ideas[index];
 }
 

@@ -6,12 +6,13 @@
 /*   By: zsonie <zsonie@student.42lyon.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/06 19:29:18 by zsonie            #+#    #+#             */
-/*   Updated: 2026/01/06 22:15:34 by zsonie           ###   ########lyon.fr   */
+/*   Updated: 2026/02/05 00:30:31 by zsonie           ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
 #pragma once
-#include <string>
+#ifndef DOG_HPP
+# define DOG_HPP
 #include "Animal.hpp"
 
 class Dog : public Animal
@@ -24,3 +25,4 @@ public:
 	~Dog();
 	void makeSound() const;
 };
+#endif

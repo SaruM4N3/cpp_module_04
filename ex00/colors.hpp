@@ -5,17 +5,25 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: zsonie <zsonie@student.42lyon.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/01/19 11:40:31 by zsonie            #+#    #+#             */
-/*   Updated: 2026/01/19 11:41:09 by zsonie           ###   ########lyon.fr   */
+/*   Created: 2026/01/07 00:40:24 by zsonie            #+#    #+#             */
+/*   Updated: 2026/02/05 00:37:19 by zsonie           ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
 #pragma once
+#ifndef COLORS_HPP
+# define COLORS_HPP
 
-#define RED     "\033[0;31m"
-#define GREEN   "\033[0;32m"
-#define YELLOW  "\033[0;33m"
-#define BLUE    "\033[0;34m"
-#define MAGENTA "\033[0;35m"
-#define CYAN    "\033[0;36m"
-#define RESET   "\033[0;37m"
+#ifndef DEBUG_MODE
+# define DEBUG_MODE 0
+#endif
+
+#define RESET "\033[0m"
+#define RED "\033[31m"
+#define GREEN "\033[32m"
+#define YELLOW "\033[33m"
+#define BLUE "\033[34m"
+#define MAGENTA "\033[35m"
+#define CYAN "\033[36m"
+
+#endif

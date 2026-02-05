@@ -6,11 +6,13 @@
 /*   By: zsonie <zsonie@student.42lyon.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/07 00:38:02 by zsonie            #+#    #+#             */
-/*   Updated: 2026/01/08 02:19:26 by zsonie           ###   ########lyon.fr   */
+/*   Updated: 2026/02/05 00:43:18 by zsonie           ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
 #pragma once
+#ifndef BRAIN_HPP
+# define BRAIN_HPP
 #include<string>
 
 class Brain
@@ -28,3 +30,4 @@ public:
     std::string getIdea(int index);
     std::string *getIdeas();
 };
+#endif

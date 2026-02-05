@@ -6,13 +6,14 @@
 /*   By: zsonie <zsonie@student.42lyon.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/06 22:19:06 by zsonie            #+#    #+#             */
-/*   Updated: 2026/01/06 22:19:38 by zsonie           ###   ########lyon.fr   */
+/*   Updated: 2026/02/05 00:30:37 by zsonie           ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
 #pragma once
+#ifndef WRONGCAT_HPP
+# define WRONGCAT_HPP
 #include "WrongAnimal.hpp"
-#include <string>
 
 class WrongCat : public WrongAnimal
 {
@@ -24,3 +25,4 @@ public:
 	~WrongCat();
 	void makeSound() const;
 };
+#endif

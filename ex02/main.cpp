@@ -6,7 +6,7 @@
 /*   By: zsonie <zsonie@student.42lyon.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/06 19:26:34 by zsonie            #+#    #+#             */
-/*   Updated: 2026/01/21 14:24:23 by zsonie           ###   ########lyon.fr   */
+/*   Updated: 2026/02/05 00:50:45 by zsonie           ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,9 +34,15 @@ int main()
         std::stringstream sus("");
         sus << i;
         Brain *tmp = array[i]->getBrain();
-        tmp->setIdea("m'en bas les couilles N^" + sus.str(), 0);
+        tmp->setIdea("OUHOUHOUHOUHOUH N^" + sus.str(), 0);
         std::cout << array[i]->getBrain()->getIdea(0) << std::endl;
     }
+    //IF U WANT TO TEST COMPILATION ISSUE DUE TO ABSTRACT CLASS 
+    // AAnimal *classicAnimal = new AAnimal;
+    
+    // std::cout << "Test for Animal sound: " << std::endl;
+    // classicAnimal->makeSound();
+    // delete classicAnimal;
     
     for (int i = 0; i < 100; i++)
         delete array[i];

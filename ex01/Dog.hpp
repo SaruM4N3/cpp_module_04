@@ -6,11 +6,13 @@
 /*   By: zsonie <zsonie@student.42lyon.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/06 19:29:18 by zsonie            #+#    #+#             */
-/*   Updated: 2026/01/08 03:40:26 by zsonie           ###   ########lyon.fr   */
+/*   Updated: 2026/02/05 00:32:54 by zsonie           ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
 #pragma once
+#ifndef DOG_HPP
+# define DOG_HPP
 #include "Animal.hpp"
 #include "Brain.hpp"
 
@@ -27,3 +29,4 @@ public:
 	Brain* getBrain() const;
 	void makeSound() const;
 };
+#endif

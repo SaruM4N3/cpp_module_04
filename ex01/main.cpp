@@ -6,7 +6,7 @@
 /*   By: zsonie <zsonie@student.42lyon.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/06 19:26:34 by zsonie            #+#    #+#             */
-/*   Updated: 2026/01/21 14:26:08 by zsonie           ###   ########lyon.fr   */
+/*   Updated: 2026/02/05 02:12:17 by zsonie           ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,7 @@ int main()
         std::stringstream sus("");
         sus << i;
         Brain *tmp = array[i]->getBrain();
-        tmp->setIdea("m'en bas les couilles N^" + sus.str(), 0);
+        tmp->setIdea("OUHOUHOUHOUHOUH N^" + sus.str(), 0);
         std::cout << array[i]->getBrain()->getIdea(0) << std::endl;
     }
     

@@ -11,13 +11,11 @@
 /* ************************************************************************** */
 
 #pragma once
+#ifndef AANIMAL_HPP
+# define AANIMAL_HPP
 #include <string>
 #include "colors.hpp"
 #include "Brain.hpp"
-
-#ifndef DEBUG_MODE
-# define DEBUG_MODE 0
-#endif
 
 class AAnimal
 {
@@ -29,9 +27,10 @@ public:
 	AAnimal(std::string name);
 	AAnimal(const AAnimal &copy);
 	AAnimal &operator=(const AAnimal &copy);
-	virtual ~AAnimal();
+	virtual ~AAnimal() = 0;
 
-	virtual void makeSound() const;
-	virtual Brain *getBrain() const;
+	virtual void makeSound() const = 0;
+	virtual Brain *getBrain() const = 0;
 	std::string getType() const;
 };
+#endif

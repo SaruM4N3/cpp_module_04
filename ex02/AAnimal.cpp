@@ -59,20 +59,6 @@ AAnimal::~AAnimal()
                   << RESET << std::endl;
 }
 
-void AAnimal::makeSound() const
-{
-    std::cout << BLUE << "Unknow AAnimal: "
-              << GREEN << this->_type
-              << BLUE << " is AAnimaling!"
-              << RESET << std::endl;
-    return;
-}
-
-std::string AAnimal::getType() const
-{
-    return this->_type;
-}
-
 Brain *AAnimal::getBrain() const
 {
     std::cout << BLUE << "Unknow AAnimal: "

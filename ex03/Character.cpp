@@ -6,12 +6,11 @@
 /*   By: zsonie <zsonie@student.42lyon.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/21 15:07:57 by zsonie            #+#    #+#             */
-/*   Updated: 2026/02/04 22:26:48 by zsonie           ###   ########lyon.fr   */
+/*   Updated: 2026/02/05 01:47:38 by zsonie           ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Character.hpp"
-#include "Ice.hpp"
 
 Character::Character() : _name("Default"), _items()
 {
@@ -79,18 +78,21 @@ std::string const &Character::getName() const
 
 void Character::equip(AMateria *m)
 {
+    if (!m)
+        return;
     if (DEBUG_MODE)
         std::cout << YELLOW << "Character: "
                   << GREEN << this->getName()
                   << YELLOW << " try to equip materia: "
                   << CYAN << m->getType() << RESET << std::endl;
-    if (!m)
-        return;
     int i = 0;
     while (i < 4 && this->_items[i])
         i++;
     if (i >= 4)
+    {
+        delete m;
         return;
+    }
     this->_items[i] = m;
 }
 
@@ -101,7 +103,7 @@ void Character::unequip(int idx)
                   << GREEN << this->getName()
                   << YELLOW << " try to unequip materia at index "
                   << CYAN << idx << RESET << std::endl;
-    if (idx > 3 || idx < 0)
+    if (idx < 0 || idx > 3)
         return;
     if (this->_items[idx])
         this->_items[idx] = NULL;
@@ -112,9 +114,9 @@ void Character::use(int idx, ICharacter &target)
     if (DEBUG_MODE)
         std::cout << YELLOW << "Character: "
                   << GREEN << this->getName()
-                  << YELLOW << " try to use materia from index "
-                  << CYAN << idx << RESET << std::endl;
-    if ((idx >= 0 && idx <= 3 ) && this->_items[idx])
+                  << YELLOW << " try to use materia at index "
+                  << CYAN << idx << YELLOW << " on: " << CYAN << target.getName() << RESET << std::endl;
+    if (idx >= 0 && idx < 4 && this->_items[idx])
         this->_items[idx]->use(target);
 }
 
@@ -123,5 +125,5 @@ AMateria *Character::getMateria(int idx)
     if (idx >= 0 && idx < 4)
         return (this->_items[idx]);
     std::cout << RED << "Wrong index in getMateria, still return a new materia to avoid leak issues" << RESET << std::endl;
-    return new Ice();
+    return NULL;
 }
